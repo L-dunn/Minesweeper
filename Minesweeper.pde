@@ -61,9 +61,36 @@ public boolean isValid(int r, int c)
 public int countMines(int row, int col)
 {
     int numMines = 0;
-    if(){
+    //top 3 neighbors
+    if(isValid(row-1, col-1) && mines.contains(buttons[row-1][col-1])){
       numMines++;
     }
+    if(isValid(row-1, col) && mines.contains(buttons[row-1][col])){
+      numMines++;
+    }
+    if(isValid(row-1, col+1) && mines.contains(buttons[row-1][col+1])){
+      numMines++;
+    }
+    
+    //left and right neighbor
+    if(isValid(row, col-1) && mines.contains(buttons[row][col-1])){
+      numMines++;
+    }
+    if(isValid(row, col+1) && mines.contains(buttons[row][col+1])){
+      numMines++;
+    }
+    
+    //bottom 3 neighbors
+    if(isValid(row+1, col-1) && mines.contains(buttons[row+1][col-1])){
+      numMines++;
+    }
+    if(isValid(row+1, col) && mines.contains(buttons[row+1][col])){
+      numMines++;
+    }
+    if(isValid(row+1, col+1) && mines.contains(buttons[row+1][col+1])){
+      numMines++;
+    }
+    
     return numMines;
 }
 public class MSButton
